@@ -424,7 +424,7 @@ p { margin: 0; }
   width: 8px; height: 5px; border-left: 2px solid #fff; border-bottom: 2px solid #fff; transform: rotate(-45deg);
 }
 .hero__billede-wrap { position: relative; }
-.hero__billede { aspect-ratio: 4 / 5; border-radius: 24px; }
+.hero__billede { aspect-ratio: 3 / 2; border-radius: 24px; }
 .hero__kort {
   position: absolute; left: -28px; bottom: 32px;
   background: #fff; border-radius: 16px; padding: 16px 20px;
@@ -455,7 +455,7 @@ p { margin: 0; }
 
   .top__grid, .hero__grid, .kontakt__grid, .facebook__inner, .om, .engageret, .kontaktside { grid-template-columns: 1fr; }
   .hero__grid { gap: 40px; }
-  .hero__billede { aspect-ratio: 4 / 3; }
+    .hero__billede { aspect-ratio: 3 / 2; }
   .hero__kort { left: 16px; bottom: 16px; }
   .footer__grid { grid-template-columns: 1fr 1fr; }
   .ydelser, .galleri { grid-template-columns: 1fr 1fr; }
