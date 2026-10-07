@@ -390,7 +390,7 @@ p { margin: 0; }
 .info a, .info strong { font-weight: 600; word-break: break-word; }
 
 /* ---------- Footer ---------- */
-.footer { background: #18223D; color: #C9CFDC; font-size: .97rem; }
+.footer { background: var(--roed); color: #F2DEDE; font-size: .97rem; border-top: 1px solid rgba(255, 255, 255, .15); }
 .footer__grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; padding-top: 64px; padding-bottom: 48px; }
 .footer__logo { height: 64px; width: auto; background: #fff; border-radius: 12px; padding: 6px 8px; }
 .footer__navn { color: #fff; font-weight: 600; font-size: 1.1rem; margin: 16px 0 6px; }
