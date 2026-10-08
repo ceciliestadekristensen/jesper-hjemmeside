@@ -228,12 +228,62 @@ function startFormularer() {
     });
   });
 }
+/* ---------- Forstør billeder ---------- */
+function startLightbox() {
+  const boks = document.createElement("div");
+  boks.className = "lightbox";
+  boks.hidden = true;
+  boks.setAttribute("role", "dialog");
+  boks.setAttribute("aria-modal", "true");
+  boks.setAttribute("aria-label", "Forstørret billede");
+  boks.innerHTML = '<button class="lightbox__luk" type="button" aria-label="Luk billede">' +
+    '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"></line><line x1="18" y1="6" x2="6" y2="18"></line></svg>' +
+    '</button><img class="lightbox__billede" alt="">';
+  document.body.appendChild(boks);
+  const stort = boks.querySelector(".lightbox__billede");
+  const luk = boks.querySelector(".lightbox__luk");
+  let forrigeFokus = null;
 
+  function aaben(img) {
+    stort.src = img.currentSrc || img.src;
+    stort.alt = img.alt;
+    boks.hidden = false;
+    document.body.style.overflow = "hidden";
+    forrigeFokus = document.activeElement;
+    luk.focus();
+  }
+  function lukBoks() {
+    boks.hidden = true;
+    stort.removeAttribute("src");
+    document.body.style.overflow = "";
+    if (forrigeFokus) forrigeFokus.focus();
+  }
+
+  luk.addEventListener("click", lukBoks);
+  boks.addEventListener("click", (e) => { if (e.target === boks) lukBoks(); });
+  document.addEventListener("keydown", (e) => {
+    if (!boks.hidden && (e.key === "Escape" || e.key === "Tab")) { e.preventDefault(); if (e.key === "Escape") lukBoks(); }
+  });
+
+  const kanForstoerres = (el) => el && el.matches(".billede img") && !el.closest("a");
+  document.addEventListener("click", (e) => {
+    if (kanForstoerres(e.target)) aaben(e.target);
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && kanForstoerres(document.activeElement)) aaben(document.activeElement);
+  });
+  const goerFokuserbar = () => document.querySelectorAll(".billede img").forEach((img) => {
+    if (!img.closest("a") && !img.hasAttribute("tabindex")) img.tabIndex = 0;
+  });
+  goerFokuserbar();
+  new MutationObserver(goerFokuserbar).observe(document.body, { childList: true, subtree: true });
+}
 document.addEventListener("DOMContentLoaded", () => {
   startMenu();
   startKarrusel();
   startGalleri();
   startFormularer();
+  startLightbox();
   const header = document.querySelector(".header");
   const skygge = () => header && header.classList.toggle("skygge", window.scrollY > 8);
   window.addEventListener("scroll", skygge, { passive: true });
