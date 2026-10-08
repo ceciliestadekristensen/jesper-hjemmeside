@@ -484,3 +484,30 @@ p { margin: 0; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
+
+/* ---------- Forstørret billede (lightbox) ---------- */
+.billede img { cursor: zoom-in; }
+.telefon .billede img { cursor: pointer; }
+.lightbox {
+  position: fixed; inset: 0; z-index: 200;
+  background: rgba(10, 14, 25, .9);
+  display: flex; align-items: center; justify-content: center;
+  padding: 72px 16px 24px;
+}
+.lightbox[hidden] { display: none; }
+.lightbox__billede {
+  max-width: min(1200px, 100%);
+  max-height: calc(100vh - 110px);
+  width: auto; height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .5);
+}
+.lightbox__luk {
+  position: absolute; top: 16px; right: 16px;
+  width: 48px; height: 48px; border-radius: 50%;
+  border: 0; background: #fff; color: var(--tekst);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+}
+.lightbox__luk:hover { background: var(--flade); }
