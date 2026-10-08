@@ -108,9 +108,8 @@ const GALLERI = [
     kategori: "Indvendigt",
     tekst: "Her har jeg hjulpet en kunde med at friske køkkenlåger, trappe og paneler op.",
     billeder: [
-      { billede: "billeder/galleri/koekken-1.jpg" },
-      { foer: "billeder/galleri/trapperum-1-foer.jpg", efter: "billeder/galleri/trapperum-1-efter.jpg" },
-      { billede: "billeder/galleri/koekken-2.jpg" }
+      { foer: "billeder/galleri/koekken-2.jpg", efter: "billeder/galleri/koekken-1.jpg" },
+      { foer: "billeder/galleri/trapperum-1-foer.jpg", efter: "billeder/galleri/trapperum-1-efter.jpg" }
     ]
   },
   {
