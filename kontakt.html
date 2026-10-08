@@ -41,7 +41,10 @@
 </section>
 <section class="sektion">
   <div class="wrap kontaktside">
-    <form class="formular formular--kant" data-mail>
+    <form class="formular formular--kant" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="6a551f26-4c70-44ba-8050-6241564dec9a">
+      <input type="hidden" name="subject" value="Ny forespørgsel fra hjemmesiden">
+      <input type="checkbox" name="botcheck" style="display:none">
       <h2 style="font-size:1.6rem">Få et uforpligtende tilbud</h2>
       <div class="felter-2">
         <div class="felt"><label for="k-navn">Navn</label><input id="k-navn" name="navn" type="text" autocomplete="name" required></div>
