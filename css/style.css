@@ -512,3 +512,4 @@ p { margin: 0; }
 }
 .lightbox__luk:hover { background: var(--flade); }
 .footer__copy { margin-top: 16px; font-size: .9rem; }
+.engageret .billede img { object-fit: contain; background: #fff; }
