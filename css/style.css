@@ -53,7 +53,7 @@ h1, h2, h3 {
   letter-spacing: -0.015em;
   margin: 0;
 }
-h1 { font-size: clamp(2.2rem, 4.5vw, 3.3rem); }
+h1 { font-size: clamp(1.9rem, 3.4vw, 2.6rem); }
 h2 { font-size: clamp(1.8rem, 3.2vw, 2.4rem); }
 h3 { font-size: 1.3rem; }
 p { margin: 0; }
@@ -330,7 +330,7 @@ p { margin: 0; }
 .side-top { background: #fff; padding: 40px 0 24px; }
 .broedkrumme { font-size: .95rem; color: var(--tekst-svag); margin-bottom: 14px; }
 .broedkrumme a { color: var(--tekst-svag); }
-.side-top p.intro { font-size: 1.15rem; color: var(--tekst-svag); margin-top: 14px; max-width: 38em; }
+.side-top p.intro { font-size: 1.05rem; color: var(--tekst-svag); margin-top: 14px; max-width: 38em; }
 
 .cta { background: var(--roed); color: #fff; padding: 56px 0; }
 .cta__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
