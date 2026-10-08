@@ -197,27 +197,34 @@ function startGalleri() {
 }
 
 /* ---------- Kontaktformular ----------
-   Siden har ingen server, så formularen åbner kundens mailprogram
-   med en færdigudfyldt mail til Jesper. */
+   Sendes via Web3Forms i baggrunden, så kunden bliver på siden
+   og får en tak-besked på dansk. */
 function startFormularer() {
-  document.querySelectorAll("form[data-mail]").forEach((form) => {
-    form.addEventListener("submit", (e) => {
+  document.querySelectorAll('form[action*="web3forms"]').forEach((form) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
-      const data = new FormData(form);
-      const navn = (data.get("navn") || "").toString().trim();
-      const linjer = [];
-      for (const [felt, vaerdi] of data.entries()) {
-        if (vaerdi && vaerdi.toString().trim()) {
-          linjer.push(felt.charAt(0).toUpperCase() + felt.slice(1) + ": " + vaerdi.toString().trim());
-        }
-      }
-      const emne = "Forespørgsel fra hjemmesiden" + (navn ? " – " + navn : "");
-      const link = "mailto:" + EMAIL + "?subject=" + encodeURIComponent(emne) + "&body=" + encodeURIComponent(linjer.join("\n\n"));
-      window.location.href = link;
+      const knap = form.querySelector('button[type="submit"]');
       const besked = form.querySelector(".formular__besked");
-      if (besked) {
-        besked.textContent = "Dit mailprogram åbner nu med beskeden. Tryk send derinde. Åbner det ikke, så skriv direkte til " + EMAIL + " eller ring på 28 29 90 38.";
+      const knapTekst = knap.textContent;
+      knap.disabled = true;
+      knap.textContent = "Sender...";
+      besked.textContent = "";
+      try {
+        const svar = await fetch(form.action, { method: "POST", body: new FormData(form) });
+        const data = await svar.json();
+        if (data.success) {
+          form.reset();
+          besked.textContent = "Tak for din besked! Jeg vender tilbage hurtigst muligt.";
+          besked.style.color = "#2E7D32";
+        } else {
+          throw new Error(data.message);
+        }
+      } catch (fejl) {
+        besked.textContent = "Beskeden kunne ikke sendes. Ring i stedet på 28 29 90 38 eller skriv til " + EMAIL + ".";
+        besked.style.color = "#B3261E";
       }
+      knap.disabled = false;
+      knap.textContent = knapTekst;
     });
   });
 }
