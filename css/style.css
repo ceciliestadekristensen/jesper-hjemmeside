@@ -379,7 +379,7 @@ p { margin: 0; }
 .vaerdi p { color: var(--tekst-svag); margin-top: 8px; }
 .engageret { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
 .engageret .billede { border-radius: 18px; width: fit-content; justify-self: center; background: none; }
-.engageret .billede img { width: auto; height: auto; max-width: 100%; max-height: 400px; }
+.engageret .billede img { width: auto; height: auto; max-width: 100%; max-height: 300px; }
 .engageret p { color: var(--tekst-svag); margin-top: 12px; }
 
 /* Kontakt-side */
