@@ -332,7 +332,7 @@ p { margin: 0; }
 .broedkrumme a { color: var(--tekst-svag); }
 .side-top p.intro { font-size: 1.05rem; color: var(--tekst-svag); margin-top: 14px; max-width: 38em; }
 
-.cta { background: var(--roed); color: #fff; padding: 56px 0; }
+.cta { background: var(--roed); color: #fff; padding: 40px 0; }
 .cta__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
 .cta p { color: #F2DEDE; margin-top: 8px; }
 .cta__knapper { display: flex; flex-wrap: wrap; gap: 12px; }
@@ -513,3 +513,6 @@ p { margin: 0; }
 }
 .lightbox__luk:hover { background: var(--flade); }
 .footer__copy { margin-top: 16px; font-size: .9rem; }
+.side-top + .sektion { padding-top: 16px; }
+.cta h2 { font-size: clamp(1.4rem, 2.4vw, 1.8rem); }
+.cta p { font-size: 1rem; }
