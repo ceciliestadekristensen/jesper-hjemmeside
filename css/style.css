@@ -375,8 +375,16 @@ p { margin: 0; }
 .vaerdier { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 32px; }
 .vaerdi { background: #fff; border-radius: var(--radius); padding: 24px; }
 .vaerdi p { color: var(--tekst-svag); margin-top: 8px; }
-.engageret { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
-.engageret p { color: var(--tekst-svag); margin-top: 12px; }
+.sektion:has(.engageret) { padding: 40px 0 64px; }
+.engageret {
+  display: flex; align-items: center; gap: 32px;
+  max-width: 860px; margin: 0 auto;
+  background: var(--flade); border-radius: 20px; padding: 24px 32px 24px 24px;
+}
+.engageret .billede { order: -1; flex: none; width: auto; border-radius: 14px; background: none; aspect-ratio: auto; }
+.engageret .billede img { width: auto; height: auto; max-height: 200px; }
+.engageret h2 { font-size: 1.4rem; }
+.engageret p { color: var(--tekst-svag); margin-top: 8px; }
 
 /* Kontakt-side */
 .kontaktside { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: start; }
@@ -393,6 +401,8 @@ p { margin: 0; }
 .footer__navn { color: #fff; font-weight: 600; font-size: 1.1rem; margin: 16px 0 6px; }
 .footer h3 { color: #fff; font-size: 1.05rem; margin-bottom: 14px; }
 .footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.footer__kontakt li { display: flex; align-items: center; gap: 10px; }
+.footer__kontakt svg { flex: none; }
 .footer a { color: #fff; text-decoration: none; }
 .footer a:hover { color: #fff; text-decoration: underline; }
 .footer__bund { border-top: 1px solid rgba(255, 255, 255, .12); padding: 18px 0; font-size: .9rem; }
@@ -450,7 +460,7 @@ p { margin: 0; }
   .menu-knap[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
   .menu-knap[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-  .top__grid, .hero__grid, .kontakt__grid, .facebook__inner, .om, .engageret, .kontaktside { grid-template-columns: 1fr; }
+  .top__grid, .hero__grid, .kontakt__grid, .facebook__inner, .om, .kontaktside { grid-template-columns: 1fr; }
   .hero__grid { gap: 40px; }
     .hero__billede { aspect-ratio: 3 / 2; }
   .hero__kort { left: 16px; bottom: 16px; }
@@ -474,6 +484,29 @@ p { margin: 0; }
   .karrusel__tekst { font-size: 1.1rem; }
   .faq summary { font-size: 1.05rem; }
   .faq__svar { padding-left: 0; }
+
+  .om h2 { font-size: 1.5rem; }
+  .facebook h2 { font-size: 1.5rem; }
+  .facebook__navn { display: inline; }
+
+  .engageret { margin: 0 24px; padding: 16px; gap: 16px; }
+  .engageret .billede img { max-height: 150px; }
+  .engageret h2 { font-size: 1.15rem; }
+  .engageret p { font-size: .9rem; }
+
+  .cta__knapper { flex-wrap: nowrap; gap: 10px; }
+  .cta__knapper .knap { padding: 10px 18px; font-size: .95rem; }
+  .cta__nummer { display: none; }
+
+  .infokort { padding: 12px; }
+  .info { padding: 14px; gap: 12px; }
+  .info__ikon { width: 36px; height: 36px; }
+  .info a[href^="mailto"] { font-size: .85rem; word-break: normal; }
+
+  .footer__grid { text-align: center; gap: 32px; }
+  .footer__logo { margin: 0 auto; }
+  .footer__kontakt li { justify-content: center; }
+  .footer__genveje { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -511,17 +544,3 @@ p { margin: 0; }
 .side-top + .sektion { padding-top: 16px; }
 .cta h2 { font-size: clamp(1.4rem, 2.4vw, 1.8rem); }
 .cta p { font-size: 1rem; }
-/* ---------- Kompakt hjertestarter-boks ---------- */
-.sektion:has(.engageret) { padding: 40px 0 64px; }
-.engageret {
-  display: flex; align-items: center; gap: 32px;
-  max-width: 860px; margin: 0 auto;
-  background: var(--flade); border-radius: 20px; padding: 24px 32px 24px 24px;
-}
-.engageret .billede { order: -1; flex: none; width: auto; border-radius: 14px; background: none; aspect-ratio: auto; }
-.engageret .billede img { width: auto; height: auto; max-height: 200px; }
-.engageret h2 { font-size: 1.4rem; }
-.engageret p { margin-top: 8px; }
-@media (max-width: 620px) {
-  .engageret { flex-direction: column; align-items: flex-start; padding: 20px; }
-}
