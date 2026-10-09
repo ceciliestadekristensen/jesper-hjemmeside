@@ -260,7 +260,6 @@ p { margin: 0; }
 /* ---------- Facebook-banner ---------- */
 .facebook {
   position: relative;
-  margin-top: 80px;
   background: linear-gradient(105deg, #1F3A68 0%, #4A3560 55%, var(--roed) 100%);
   color: #fff;
 }
@@ -275,9 +274,8 @@ p { margin: 0; }
 .telefon {
   display: block;
   justify-self: end;
-  width: 220px;
-  margin-top: -80px;
-  margin-bottom: -40px;
+  width: 200px;
+  margin: 40px 0;
   transition: transform .2s;
   padding: 12px;
   background: #111827;
@@ -459,9 +457,8 @@ p { margin: 0; }
   .footer__grid { grid-template-columns: 1fr 1fr; }
   .ydelser, .galleri { grid-template-columns: 1fr 1fr; }
   .trin, .vaerdier { grid-template-columns: 1fr 1fr; }
-  .facebook { margin-top: 0; }
   .facebook__inner { padding: 56px 24px; }
-  .telefon { margin: 0 auto; width: 200px; justify-self: center; }
+  .telefon { margin: 0 auto; justify-self: center; }
   .facebook__navn { white-space: normal; }
 }
 
@@ -514,10 +511,6 @@ p { margin: 0; }
 .side-top + .sektion { padding-top: 16px; }
 .cta h2 { font-size: clamp(1.4rem, 2.4vw, 1.8rem); }
 .cta p { font-size: 1rem; }
-/* ---------- Facebook-banner uden hvidt mellemrum ---------- */
-.facebook { margin-top: 0; }
-.telefon { margin: 40px 0; width: 200px; }
-
 /* ---------- Kompakt hjertestarter-boks ---------- */
 .sektion:has(.engageret) { padding: 40px 0 64px; }
 .engageret {
