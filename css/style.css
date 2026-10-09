@@ -494,8 +494,9 @@ p { margin: 0; }
   .engageret h2 { font-size: 1.15rem; }
   .engageret p { font-size: .9rem; }
 
-  .cta__knapper { flex-wrap: nowrap; gap: 10px; }
-  .cta__knapper .knap { padding: 10px 18px; font-size: .95rem; }
+  .hero h1 { font-size: 1.55rem; }
+  .cta__knapper, .hero__knapper { flex-wrap: nowrap; gap: 10px; }
+  .cta__knapper .knap, .hero__knapper .knap { padding: 10px 18px; font-size: .95rem; }
   .cta__nummer { display: none; }
 
   .infokort { padding: 12px; }
