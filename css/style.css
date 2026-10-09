@@ -378,8 +378,6 @@ p { margin: 0; }
 .vaerdi { background: #fff; border-radius: var(--radius); padding: 24px; }
 .vaerdi p { color: var(--tekst-svag); margin-top: 8px; }
 .engageret { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
-.engageret .billede { border-radius: 18px; width: fit-content; justify-self: center; background: none; }
-.engageret .billede img { width: auto; height: auto; max-width: 100%; max-height: 200px; }
 .engageret p { color: var(--tekst-svag); margin-top: 12px; }
 
 /* Kontakt-side */
@@ -516,3 +514,21 @@ p { margin: 0; }
 .side-top + .sektion { padding-top: 16px; }
 .cta h2 { font-size: clamp(1.4rem, 2.4vw, 1.8rem); }
 .cta p { font-size: 1rem; }
+/* ---------- Facebook-banner uden hvidt mellemrum ---------- */
+.facebook { margin-top: 0; }
+.telefon { margin: 40px 0; width: 200px; }
+
+/* ---------- Kompakt hjertestarter-boks ---------- */
+.sektion:has(.engageret) { padding: 40px 0 64px; }
+.engageret {
+  display: flex; align-items: center; gap: 32px;
+  max-width: 860px; margin: 0 auto;
+  background: var(--flade); border-radius: 20px; padding: 24px 32px 24px 24px;
+}
+.engageret .billede { order: -1; flex: none; width: auto; border-radius: 14px; background: none; aspect-ratio: auto; }
+.engageret .billede img { width: auto; height: auto; max-height: 200px; }
+.engageret h2 { font-size: 1.4rem; }
+.engageret p { margin-top: 8px; }
+@media (max-width: 620px) {
+  .engageret { flex-direction: column; align-items: flex-start; padding: 20px; }
+}
