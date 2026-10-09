@@ -197,7 +197,7 @@ p { margin: 0; }
 .farve-5 { background: var(--rb-blaa); }
 .farve-6 { background: var(--rb-lilla); }
 
-/* ---------- Karrusel (før og efter) ---------- */
+/* ---------- Karrusel (Billeder) ---------- */
 .sektion__hoved { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px; }
 .links { display: flex; flex-wrap: wrap; gap: 24px; font-weight: 600; }
 
