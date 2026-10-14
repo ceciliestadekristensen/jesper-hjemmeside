@@ -2,7 +2,7 @@
 
 Hjemmeside til Malermester Jesper Lauritsen, et enkeltmandsfirma i Hjørring, der laver malerarbejde inde og ude for private og erhverv.
 
-**Live:** [malermester-lauritsen.pages.dev](https://malermester-lauritsen.pages.dev/)
+**Live:** [malermesterlauritsen.dk](https://malermesterlauritsen.dk/)
 
 ![Forsiden](billeder/readme/forside.jpg)
 
