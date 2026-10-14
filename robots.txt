@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://malermesterlauritsen.dk/sitemap.xml
