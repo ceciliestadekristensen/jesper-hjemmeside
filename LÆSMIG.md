@@ -33,8 +33,3 @@ Tip: Gør billederne mindre, før de lægges ind (fx max 1600 px brede), så sid
 
 Siden har ingen server, så formularen åbner kundens mailprogram med en færdigudfyldt mail til malermesterlauritsen@gmail.com. Vil I have, at formularen sender direkte, kan den kobles på en gratis tjeneste som Formspree eller Web3Forms.
 
-## Mangler stadig
-
-- Jespers historie på Om Jesper-siden
-- Telefontider på Kontakt-siden
-- Eventuelt medlemskab af Danske Malermestre (der ligger en skjult sektion klar i `om-jesper.html`)
